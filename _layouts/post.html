@@ -33,6 +33,16 @@ layout: default
       {{ content }}
 
       <hr>
+      
+      {% if page.tags != empty %}
+      <h6>Tags : [
+        {% for tag in page.tags %}
+          <a class="tag" href="/tags/list.html#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+      ]
+      </h6>
+      <hr>
+      {% endif %}
 
       <div class="clearfix">
 
