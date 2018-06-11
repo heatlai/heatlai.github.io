@@ -1,0 +1,9 @@
+pre {
+    padding: 1rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+}
+
+header.masthead .post-heading .meta {
+    text-align: right;
+}
