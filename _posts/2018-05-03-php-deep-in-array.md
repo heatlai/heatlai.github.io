@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  '檢查多維陣列內數值是否存在'
-subtitle: 'Deep In Array'
+subtitle: 'PHP - Deep In Array'
 background: '/img/posts/04.jpg'
 
 date: 2018-05-03
