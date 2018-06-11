@@ -11,17 +11,19 @@ category: Linux
 tags: [CentOS, Nginx]
 ---
 
-Nginx 出現 500 Error  
+# 情況：Nginx 出現 500 Error  
 
 可能有下述兩種狀況:  
 
+```
 socket() failed (24: Too many open files) while connecting to upstream
 512 worker_connections are not enough while connecting to upstream
-
+```
+```
 2011/05/01 23:00:49 [alert] 7387#0: *6259768 socket() failed (24: Too many open files)
 while connecting to upstream, client: 123.123.123.123, server: www.example.com,
 request: "GET [[/]] HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "www.example.com"
- 
+```
 
 # 在 CentOS 7 處理方式
 
