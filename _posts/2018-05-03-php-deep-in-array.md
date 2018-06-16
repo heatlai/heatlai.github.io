@@ -6,8 +6,6 @@ background: '/img/posts/04.jpg'
 
 date: 2018-05-03
 
-categories: development
-category: Programing
 tags: [PHP]
 ---
 

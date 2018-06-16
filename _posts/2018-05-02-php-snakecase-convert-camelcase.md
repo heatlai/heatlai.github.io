@@ -6,15 +6,13 @@ background: '/img/posts/04.jpg'
 
 date: 2018-05-02
 
-categories: development
-category: Programing
 tags: [PHP]
 ---
 
 # SnakeCase CamelCase 互轉
 
 ```
-function snakeCaseToCamelCase( $string, $capitalizeFirstCharacter = false ) : string
+function snakeCaseToCamelCase( string $string, bool $capitalizeFirstCharacter = false ) : string
 {
 
     $str = str_replace('_', '', ucwords($string, '_'));

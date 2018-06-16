@@ -6,8 +6,6 @@ background: '/img/posts/04.jpg'
 
 date: 2018-06-10
 
-categories: development
-category: Linux
 tags: [CentOS, Nginx]
 ---
 

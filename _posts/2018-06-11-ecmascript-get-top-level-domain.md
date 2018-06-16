@@ -6,8 +6,6 @@ background: '/img/posts/04.jpg'
 
 date: 2018-06-11
 
-categories: development
-category: Programing
 tags: [ECMAScript]
 ---
 
