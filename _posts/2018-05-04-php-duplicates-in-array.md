@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  '取得陣列內重複的值'
+title:  '[PHP] 取得陣列內重複的值'
 subtitle: 'PHP - Duplicates In Array'
 background: '/img/posts/04.jpg'
 

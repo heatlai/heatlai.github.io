@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  '取得最上層網域'
+title:  '[ECMAScript] 取得最上層網域'
 subtitle: 'ECMAScript - Get Top Level Domain'
 background: '/img/posts/04.jpg'
 

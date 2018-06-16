@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Too many open files 錯誤訊息'
+title:  '[CentOS] Too many open files 錯誤訊息'
 subtitle: 'Nginx - 出現 500 Error'
 background: '/img/posts/04.jpg'
 
