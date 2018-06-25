@@ -70,3 +70,14 @@ Preferences > Profiles > Text
 點 Change Font 選 Hack Nerd Font
 (選用) Size 用 18 
 ```
+
+# CLI Syntax highlighting (選用)
+
+```
+brew install zsh-syntax-highlighting
+
+vim ~/.zshrc
+
+# 加在檔案最後面
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
