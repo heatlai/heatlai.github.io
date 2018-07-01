@@ -16,7 +16,7 @@ tags: [Mac]
 ```
 
 # 安裝iTerm 2
-[iTerm2](http://iterm2.com/)  
+<a href="http://iterm2.com/" target="_blank">iTerm2</a>  
 下載後解壓縮，放到 應用程式。
 
 # 安裝 oh-my-zsh
