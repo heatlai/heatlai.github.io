@@ -23,6 +23,7 @@ mkdir -p /etc/supervisor/conf.d
 ```
 - supervisor 主設定檔路徑 : `/etc/supervisord.conf`
 - 以下只寫出 `supervisord.conf` 常用的設定
+
 ```
 [unix_http_server]
 file=/var/run/supervisor.sock   ; the path to the socket file
@@ -62,6 +63,7 @@ files = /etc/supervisor/conf.d/*.ini
 ```
 vim /etc/supervisor/conf.d/ratchet.ini
 ```
+
 ```
 [program:ratchet]
 command                 = bash -c "ulimit -n 10000; exec /usr/bin/php /root/websocket-start.php" ; 要執行的CMD
