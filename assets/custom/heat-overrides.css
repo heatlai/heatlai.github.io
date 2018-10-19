@@ -10,6 +10,6 @@ header.masthead .post-heading .meta {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 100vw;
+        max-width: 90vw;
     }
 }
