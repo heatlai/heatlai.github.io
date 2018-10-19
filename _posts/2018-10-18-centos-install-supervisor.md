@@ -89,11 +89,9 @@ supervisorctl
 ```
 
 # 開機自動啟動 supervisor (CentOS 6)
+#### Startup Script
 ```
-sudo vi /etc/rc.d/init.d/supervisord # 內容在下面
-sudo chmod 755 /etc/rc.d/init.d/supervisord
-sudo chkconfig --add supervisord
-sudo chkconfig supervisord on # 非必要 預設runlevel:345
+sudo vi /etc/rc.d/init.d/supervisord
 ```
 #### /etc/rc.d/init.d/supervisord 內容
 ```
@@ -208,10 +206,17 @@ esac
 
 exit $RETVAL
 ```
+#### 加入到 chkconfig
+```
+sudo chmod 755 /etc/rc.d/init.d/supervisord
+sudo chkconfig --add supervisord
+sudo chkconfig supervisord on # 非必要, supervisord 已寫 runlevel:345
+```
 
 # 開機自動啟動 supervisor (CentOS 7)
+#### Startup Script
 ```
-vi /etc/systemd/system/supervisord.service
+sudo vi /etc/systemd/system/supervisord.service
 ```
 #### /etc/systemd/system/supervisord.service 內容
 ```
