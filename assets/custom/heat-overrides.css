@@ -7,3 +7,9 @@ pre {
 header.masthead .post-heading .meta {
     text-align: right;
 }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100vw;
+    }
+}
