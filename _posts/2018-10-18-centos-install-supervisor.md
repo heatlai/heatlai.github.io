@@ -75,6 +75,8 @@ user                    = root ; 執行的User帳號
 stdout_logfile          = /var/log/supervisor/ratchet.log ; output log
 stdout_logfile_maxbytes = 1MB ; log file size, 超過會自動循環
 redirect_stderr         = true ; error_log 直接寫到 stdout_logfile
+;stderr_logfile          = /var/log/supervisor/ratchet_error.log
+;stderr_logfile_maxbytes = 1MB
 ```
 
 # 開機自動啟動 supervisor (CentOS 6)
