@@ -67,6 +67,7 @@ vim /etc/supervisor/conf.d/ratchet.ini
 ```
 [program:ratchet]
 command                 = bash -c "ulimit -n 10000; exec /usr/bin/php /root/websocket-start.php" ; 要執行的CMD
+;directory              = /root ; 先cd到directory再執行command (非必要, 全部寫絕對路徑也可以)
 process_name            = Ratchet ; process 名稱
 numprocs                = 1 ; process 數量
 autostart               = true ; 自動啟動
@@ -74,9 +75,17 @@ autorestart             = true ; 自動重啟
 user                    = root ; 執行的User帳號
 stdout_logfile          = /var/log/supervisor/ratchet.log ; output log
 stdout_logfile_maxbytes = 1MB ; log file size, 超過會自動循環
+stdout_logfile_backups  = 5
+stdout_capture_maxbytes = 1MB
 redirect_stderr         = true ; error_log 直接寫到 stdout_logfile
 ;stderr_logfile          = /var/log/supervisor/ratchet_error.log
 ;stderr_logfile_maxbytes = 1MB
+```
+
+# 啟動 service
+```
+sudo service supervisord start
+supervisorctl
 ```
 
 # 開機自動啟動 supervisor (CentOS 6)
@@ -198,4 +207,35 @@ case "$1" in
 esac
 
 exit $RETVAL
+```
+
+# 開機自動啟動 supervisor (CentOS 7)
+```
+vi /etc/systemd/system/supervisord.service
+```
+#### /etc/systemd/system/supervisord.service 內容
+```
+[Unit]
+Description=Supervisor process control system for UNIX
+Documentation=http://supervisord.org
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/supervisord -n -c /etc/supervisord.conf
+ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+KillMode=process
+Restart=on-failure
+RestartSec=50s
+
+[Install]
+WantedBy=multi-user.target
+```
+#### 確認 service 設定
+```
+systemctl list-unit-files --type=service
+systemctl start supervisord
+systemctl status supervisord
+systemctl stop supervisord
+systemctl enable supervisord.service
 ```
