@@ -2,7 +2,7 @@
 layout: post
 title:  '[PHP] 檢查多維陣列內數值是否存在'
 subtitle: 'PHP - Deep In Array'
-background: '/img/posts/04.jpg'
+background: '/img/posts/06.jpg'
 
 date: 2018-05-03
 

@@ -2,7 +2,7 @@
 layout: post
 title:  '[CentOS] 安裝 Supervisor Daemon管理'
 subtitle: 'CentOS - Install Supervisor'
-background: '/img/posts/05.jpg'
+background: '/img/posts/01.jpg'
 
 date: 2018-10-18
 

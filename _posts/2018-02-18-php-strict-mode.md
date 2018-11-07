@@ -2,7 +2,7 @@
 layout: post
 title:  '[PHP] 嚴格模式(強型別)'
 subtitle: 'PHP - Strict Mode'
-background: '/img/posts/04.jpg'
+background: '/img/posts/01.jpg'
 
 date: 2018-02-18
 

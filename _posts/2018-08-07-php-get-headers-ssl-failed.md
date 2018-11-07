@@ -2,7 +2,7 @@
 layout: post
 title:  '[PHP] get_headers SSL failed'
 subtitle: 'PHP - get_headers SSL failed'
-background: '/img/posts/04.jpg'
+background: '/img/posts/06.jpg'
 
 date: 2018-08-07
 

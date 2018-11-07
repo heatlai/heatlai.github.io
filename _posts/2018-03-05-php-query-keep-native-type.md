@@ -2,7 +2,7 @@
 layout: post
 title:  '[PHP] SQL Query 保留原始型別'
 subtitle: 'PHP - SQL Query Keep Native Type'
-background: '/img/posts/04.jpg'
+background: '/img/posts/02.jpg'
 
 date: 2018-03-05
 

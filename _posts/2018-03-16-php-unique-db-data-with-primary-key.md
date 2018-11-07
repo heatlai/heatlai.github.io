@@ -2,7 +2,7 @@
 layout: post
 title:  '[PHP] merge 多個 DB 查詢結果後用 Primary Key 去重複'
 subtitle: 'PHP - Unique DB Data with PK'
-background: '/img/posts/04.jpg'
+background: '/img/posts/03.jpg'
 
 date: 2018-03-16
 

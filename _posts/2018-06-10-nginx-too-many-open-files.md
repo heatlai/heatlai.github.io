@@ -2,7 +2,7 @@
 layout: post
 title:  '[CentOS] Too many open files 錯誤訊息'
 subtitle: 'Nginx - 出現 500 Error'
-background: '/img/posts/04.jpg'
+background: '/img/posts/02.jpg'
 
 date: 2018-06-10
 

@@ -2,7 +2,7 @@
 layout: post
 title:  '[ECMAScript] 取得最上層網域'
 subtitle: 'ECMAScript - Get Top Level Domain'
-background: '/img/posts/04.jpg'
+background: '/img/posts/03.jpg'
 
 date: 2018-06-11
 

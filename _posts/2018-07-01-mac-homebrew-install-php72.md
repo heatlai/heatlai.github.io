@@ -2,7 +2,7 @@
 layout: post
 title:  '[Mac] Homebrew 安裝 PHP 7.2'
 subtitle: 'Mac - Homebrew Install PHP 7.2'
-background: '/img/posts/04.jpg'
+background: '/img/posts/05.jpg'
 
 date: 2018-07-01
 
