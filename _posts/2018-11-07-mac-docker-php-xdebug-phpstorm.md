@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  '[PHP] Mac + PHP xdebug + Docker + PhpStorm 設定'
-subtitle: 'PHP - Mac + PHP xdebug + Docker + PhpStorm settings'
+title:  '[PHP] Mac + PHP xdebug + Docker + PhpStorm 串接設定'
+subtitle: 'PHP - Mac + PHP xdebug + Docker + PhpStorm connect settings'
 background: '/img/posts/02.jpg'
 
 date: 2018-11-07
