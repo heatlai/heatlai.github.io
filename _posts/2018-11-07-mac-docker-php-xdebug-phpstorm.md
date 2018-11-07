@@ -45,7 +45,7 @@ volumes:
 ```
 
 ## 開網頁
-listen 成功的話 開網頁會自動跳出 phpstorm 設定 domain  
+listen 成功的話 開網頁會自動跳出 phpstorm debug server設定  
 第一次沒設定到可以到  
 phpstorm 的 `Preferences | Languages & Frameworks | PHP | Servers`  
 找到 local 用的 domain
