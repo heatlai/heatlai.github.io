@@ -14,6 +14,7 @@ tags: [PHP, Mac, Docker, PhpStorm]
 ```
 $ sudo ifconfig lo0 alias 10.254.254.254 255.255.255.0
 ```
+
 ## PhpStorm
 打開 Preferences | Languages & Frameworks | PHP | Debug  
 把 pre-configuration 做完 然後 restart phpstorm 
