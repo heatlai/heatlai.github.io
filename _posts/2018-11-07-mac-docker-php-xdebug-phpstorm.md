@@ -10,7 +10,7 @@ tags: [PHP, Mac, Docker, PhpStorm]
 ---
  
 ## Mac 
-- 增加 loopback IP 給 docker container 吃
+- 增加 loopback IP 給 docker container 吃  
 ```
 $ sudo ifconfig lo0 alias 10.254.254.254 255.255.255.0
 ```
