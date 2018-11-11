@@ -34,12 +34,12 @@ xdebug.idekey=PHPSTORM
 xdebug.remote_host=10.254.254.254
 ```
 
-用 docker run  
+用 docker run 開的話  
 ```
 docker run -v ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 ```
 
-用 docker-compose.yml  
+用 docker-compose 開的話 docker-compose.yml 加上  
 ```
 volumes:
     - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini  
