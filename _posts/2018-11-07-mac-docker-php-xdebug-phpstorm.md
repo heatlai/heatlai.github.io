@@ -38,6 +38,7 @@ xdebug.remote_host=10.254.254.254
 ```
 docker run -v ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 ```
+
 - docker-compose.yml  
 ```
 volumes:
