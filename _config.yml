@@ -10,6 +10,11 @@ baseurl:           "/"
 github_username:   heatlai
 #facebook_username: StartBootstrap
 
+tag_page_layout: tag
+tag_page_dir: tag
+tag_permalink_style: pretty
+ignored_tags: [tags,to,ignore]
+
 # Build settings
 markdown:          kramdown
 paginate:          5
@@ -17,3 +22,4 @@ paginate_path:     "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll/tagging

@@ -5,9 +5,18 @@
         .archive-article-date {
             width: 3.5em;
             display: inline-block;
+            &.ymd {
+                width: 6em;
+            }
         }
         .archive-article-title {
             margin-left: 0.3rem;
         }
+    }
+}
+
+.tag-cloud {
+    .site-tag {
+        margin: 5px;
     }
 }
