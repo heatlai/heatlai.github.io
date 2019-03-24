@@ -12,13 +12,16 @@
         .archive-article-title {
             margin-left: 0.3rem;
         }
+        .archive-tag-suffix {
+            font-size: 0.7em
+        }
     }
 }
 
 .tag-cloud {
-    margin-bottom: 1em;
+    padding-top: 0.3em;
     .site-tag {
-        margin: 5px;
+        margin-right: 0.5em;
         font-family: sans-serif;
     }
 }
