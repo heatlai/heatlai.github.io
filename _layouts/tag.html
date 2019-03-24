@@ -8,8 +8,17 @@ layout: default
         <div class="row">
             <div class="col-lg-10 col-md-10 mx-auto">
                 <div class="page-heading">
-                    <h1>{{ page.tag }}</h1>
-                    <span class="subheading">列表</span>
+                    <h1>{{ page.title }}</h1>
+                    <div class="tag-cloud">
+                        {% assign tags = site.tags | sort %}
+                        {% for tag in tags %}
+                        <span class="site-tag">
+                            <a href="#{{ tag | first | slugify }}" style="font-size: {{ tag | last | size | times: 4 | plus: 80 }}%">
+                                {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+                            </a>
+                        </span>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,18 +28,7 @@ layout: default
 <div class="container">
     <div class="row">
         <div class="col-lg-10 col-md-10 mx-auto">
-            <ul class="archive-ul">
-                {% for post in page.posts %}
-                <li class="archive-li">
-                    <span class="archive-article-date ymd">{{ post.date | date: "%Y-%m-%d" }}</span>
-                    <a class="archive-article-title" href="{{ post.url }}">{{ post.title }}</a>
-                    <span>( Tags: {{ post | tags }} )</span>
-                </li>
-                {% endfor %}
-            </ul>
-            <!--<div id="tag-cloud">-->
-                <!--{{ site | tag_cloud }}-->
-            <!--</div>-->
+            {{ content }}
         </div>
     </div>
 </div>
