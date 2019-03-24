@@ -4,6 +4,7 @@ description:       聽說寫部落格考試會得一百分
 author:            Heat Lai
 baseurl:           "/"
 #url:               "https://heat.hypenode.tw"
+keywords:          ["blog", "heat", "lai"]
 
 # Social Profiles
 #twitter_username:  SBootstrap
@@ -11,6 +12,7 @@ github_username:   heatlai
 #facebook_username: StartBootstrap
 
 # Build settings
+timezone:          Asia/Taipei
 markdown:          kramdown
 paginate:          5
 paginate_path:     "/posts/page:num/"
