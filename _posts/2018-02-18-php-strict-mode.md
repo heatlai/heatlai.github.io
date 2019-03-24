@@ -16,8 +16,7 @@ tags: [PHP]
 造成 input 異常但仍舊繼續執行，不會發生 Exception  
 嚴格模式將 PHP 設定為 強型別 檢查  
 
-```
-<?php
+```php
 // 當前檔案有效, 設定時只能在 script 開頭 否則會報錯
 declare(strict_types=1);
 

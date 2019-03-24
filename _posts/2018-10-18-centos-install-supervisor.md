@@ -24,7 +24,7 @@ mkdir -p /etc/supervisor/conf.d
 - supervisor 主設定檔路徑 : `/etc/supervisord.conf`
 - 以下只寫出 `supervisord.conf` 常用的設定
 
-```
+```ini
 [unix_http_server]
 file=/var/run/supervisor.sock   ; the path to the socket file
 
@@ -64,7 +64,7 @@ files = /etc/supervisor/conf.d/*.ini
 vim /etc/supervisor/conf.d/ratchet.ini
 ```
 
-```
+```ini
 [program:ratchet]
 command                 = bash -c "ulimit -n 10000; exec /usr/bin/php /root/websocket-start.php" ; 要執行的CMD
 ;directory              = /root ; 先cd到directory再執行command (非必要, 全部寫絕對路徑也可以)
@@ -94,7 +94,7 @@ supervisorctl
 sudo vi /etc/rc.d/init.d/supervisord
 ```
 #### /etc/rc.d/init.d/supervisord 內容
-```
+```bash
 #!/bin/bash
 #
 # supervisord   Startup script for the Supervisor process control system
@@ -219,7 +219,7 @@ sudo chkconfig supervisord on # 非必要, supervisord 已寫 runlevel:345
 sudo vi /etc/systemd/system/supervisord.service
 ```
 #### /etc/systemd/system/supervisord.service 內容
-```
+```bash
 [Unit]
 Description=Supervisor process control system for UNIX
 Documentation=http://supervisord.org

@@ -13,7 +13,7 @@ tags: [ECMAScript]
 
 方便有多個子網域時 set-cookie
 
-```
+```php
 function getTopLevelDomain()
 {
     if( typeof window.topLevelDomain !== 'undefined' )

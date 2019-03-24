@@ -11,7 +11,7 @@ tags: [PHP]
 
 # SnakeCase CamelCase 互轉
 
-```
+```php
 function snakeCaseToCamelCase( string $string, bool $capitalizeFirstCharacter = false ) : string
 {
 

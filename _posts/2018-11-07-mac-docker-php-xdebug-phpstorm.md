@@ -28,7 +28,7 @@ host.docker.internal
 ```
 $ vi ./php/conf.d/xdebug.ini
 ```
-```
+```ini
 [xdebug]
 xdebug.remote_enable=1
 xdebug.profiler_enable=1
@@ -45,7 +45,7 @@ docker run -v ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 ```
 
 用 docker-compose 開的話 docker-compose.yml 加上  
-```
+```yaml
 volumes:
     - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini  
 ```

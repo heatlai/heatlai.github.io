@@ -21,7 +21,7 @@ stream_context_set_default([
 ### SSL 驗證不過，可能是缺少 CA路徑檔
 
 在 php.ini 補上 config
-```
+```ini
 openssl.cafile=/etc/ssl/cert.pem
 ```
 如果 cert.pem 不存在，可以到 [CA Extract](https://curl.haxx.se/docs/caextract.html "CA Extract") 下載

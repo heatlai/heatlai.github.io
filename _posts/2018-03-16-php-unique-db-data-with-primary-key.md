@@ -13,7 +13,7 @@ tags: [PHP]
 merge 多個 result 後又只想留下不重複的 data  
 
 類似下面的樣子
-```
+```php
 $dbData = [
     [
         'id' => 1,
@@ -36,7 +36,7 @@ $dbData = [
 ```
 
 想去重複變成
-```
+```php
 $dbData = [
     [
         'id' => 1,
@@ -51,7 +51,7 @@ $dbData = [
 
 以前的菜逼八方法  
 foreach 重塞新的array check id existed
-```
+```php
 $uniqueData = array();
 
 foreach ( $dbData as $row )
@@ -67,7 +67,7 @@ foreach ( $dbData as $row )
 ```
 
 解法
-```
+```php
 function uniqueData( array $dbData, string $uniqueKey = 'id' ) : array
 {
     return array_values(array_column($dbData, null, $uniqueKey));

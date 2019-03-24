@@ -11,7 +11,7 @@ tags: [PHP]
 
 # 檢查多維陣列內數值是否存在
 
-```
+```php
 function deepInArray( $value, $targetArray )
 {
     foreach ( $targetArray as $arrayValue )
