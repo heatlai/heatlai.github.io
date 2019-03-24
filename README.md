@@ -1,6 +1,6 @@
 # blog
 
-brew install ruby
-gem install jekyll bundler
-bundle install
+brew install ruby  
+gem install jekyll bundler  
+bundle install  
 bundle exec jekyll serve
