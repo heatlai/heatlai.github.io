@@ -6,6 +6,7 @@ pre {
 
 header.masthead .post-heading .meta {
     text-align: right;
+    font-style: initial;
 }
 
 @media (min-width: 1200px) {

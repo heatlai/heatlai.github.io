@@ -14,6 +14,10 @@ tags: [PHP, Mac, Docker, PhpStorm]
 ```
 $ sudo ifconfig lo0 alias 10.254.254.254 255.255.255.0
 ```
+- 如果是18.03之後可以用特殊DNS，不需設定loopback
+```
+host.docker.internal
+```
 
 ## PhpStorm
 打開 `Preferences | Languages & Frameworks | PHP | Debug`  
@@ -31,8 +35,9 @@ xdebug.profiler_enable=1
 xdebug.remote_port=9000
 xdebug.remote_autostart=1
 xdebug.idekey=PHPSTORM
-xdebug.remote_host=10.254.254.254
+xdebug.remote_host=host.docker.internal
 ```
+`如果用loopback的話 最後一行替換為 xdebug.remote_host=10.254.254.254`
 
 用 docker run 開的話  
 ```
