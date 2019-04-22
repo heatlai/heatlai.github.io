@@ -8,10 +8,9 @@ date: 2019-04-10
 
 tags: [Database, RDBMS]
 ---
- 
-2019-03-23 RDBMS淺談 講者：Triton Ho
 
 # 為何選擇 RDBMS
+2019-03-23 RDBMS淺談 講者：Triton Ho
 1. 使用 RDBMS 比 NoSQL 有更快的開發速度
 2. 歷史悠久，有 30 年的歷史
     - 大部份軟體錯誤都已經被發現更正
