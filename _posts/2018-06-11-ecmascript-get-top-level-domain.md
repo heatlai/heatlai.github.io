@@ -6,7 +6,7 @@ background: '/img/posts/03.jpg'
 
 date: 2018-06-11
 
-tags: [ECMAScript]
+tags: [ECMAScript, Cookie]
 ---
 
 # 取得最上層網域
