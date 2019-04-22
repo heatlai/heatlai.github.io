@@ -2,6 +2,7 @@
 layout: post
 title:  '[PHP] SQL Query 保留原始型別'
 subtitle: 'PHP - SQL Query Keep Native Type'
+description: 'PHP 的 SQL Query result 怎麼保留原始型別，讓int不會變成string'
 background: '/img/posts/02.jpg'
 
 date: 2018-03-05

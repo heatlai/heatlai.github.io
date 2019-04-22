@@ -2,6 +2,7 @@
 layout: post
 title:  '[PHP] Strict 嚴格模式(強型別)'
 subtitle: 'PHP - Strict Mode'
+description: '怎麼開啟 PHP strict mode 嚴格模式(強型別)'
 background: '/img/posts/01.jpg'
 
 date: 2018-02-18

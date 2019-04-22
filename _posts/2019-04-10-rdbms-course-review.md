@@ -1,16 +1,17 @@
 ---
 layout: post
 title:  'RDBMS淺談 上課筆記'
-subtitle: 'RDBMS course review'
+subtitle: 'Why choose RDBMS course review'
 background: '/img/posts/02.jpg'
-
+description: "為何選擇RDBMS，什麼是ACID，對比於NoSQL有哪些好處，RDBMS開發時應注意哪些事。"
 date: 2019-04-10
-
+category: Develop
 tags: [Database, RDBMS]
 ---
 
-# 為何選擇 RDBMS
 2019-03-23 RDBMS淺談 講者：Triton Ho
+
+# 為何選擇 RDBMS
 1. 使用 RDBMS 比 NoSQL 有更快的開發速度
 2. 歷史悠久，有 30 年的歷史
     - 大部份軟體錯誤都已經被發現更正
