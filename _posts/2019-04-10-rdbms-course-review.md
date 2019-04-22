@@ -18,7 +18,7 @@ tags: [Database, RDBMS]
     - 社群支援良好
     - 有基於實務環境的優化
     - 出錯把丟到Stack Overflow就有一堆解法
-3. 中小型系統， RDBMS 效能已足夠
+3. 中小型系統，RDBMS 效能已足夠
 4. RDBMS 比 NoSQL 更加安全
 
 ## 更快的開發速度
@@ -37,7 +37,7 @@ tags: [Database, RDBMS]
 
 參考資料 Google: [Float Double 原理](https://www.google.com/search?q=Float+Double+%E5%8E%9F%E7%90%86)
 
-#### 3. 對於小型數據庫， RDBMS 作報表很簡單，
+#### 3. 對於小型數據庫，RDBMS 作報表很簡單，
 Triton Ho 個人認為 **中小型數據庫 = 數據量 < 100GB**，
 內建報表工具 `AVG`, `SUM`, `COUNT` 等，很方便
 
@@ -80,7 +80,7 @@ COMMIT;
   在 noSQL 的 2pc ，有一半以上的程式碼花在當機後怎麼來復原資料
 
 #### Isolation (隔離性)
-- 同一筆資料， RDBMS 保證不會同時被兩個 TX 改動
+- 同一筆資料，RDBMS 保證不會同時被兩個 TX 改動
 - 要避免 race condition，會需要LOCK (上鎖)，RDBMS 能自動管理 LOCK，
   如果沒有 RDBMS 的 Isolation 會需要額外的 Locking 系統，
  
@@ -143,9 +143,9 @@ Database 如何決定這個 query 到底要先拿 A 還是 B，
 不要一開始就幻想你要承受百萬同時在線人數 你沒那麼多客戶，
 魔獸世界夠屌了吧 台灣同時在線人數也不過60多萬，
 FB, Amazon 是巨型系統，和一般中小型系統不能相提並論，
-Facebook 一開始也是用 PHP + MySQL 就上線了，，
+Facebook 一開始也是用 PHP + MySQL 就上線了，
 而某些公司是把RDBMS當作NoSQL用，都是特殊情境，不要拿來當範例說嘴，
-應先做出產品，等賺到錢之後就有錢再找高手來重寫就好，，
+應先做出產品，等賺到錢之後就有錢再找高手來重寫就好，
 今天貪圖 NoSQL 的快，你也會發現資料很快就不見。
 
 #### RDBMS 會被 noSQL 替代
@@ -190,9 +190,9 @@ Step 9: 把 tx.status 改為 "done"
     – Step2:檢查userB,如果userB.tx符合，則把userB.tx改回null 
     – Step3:把tx.state改成done
 ```
-- 正在改動中紀錄( pendingTx != null 的 userA 和 userB )，，
+- 正在改動中紀錄( pendingTx != null 的 userA 和 userB )，
   不能被其他 TX 改動，所以要小心 deadlock，可能需要自己寫 deadlock detector
-- 在 noSQL 使用 2pc 會涉及9個 logical disk IO，，
+- 在 noSQL 使用 2pc 會涉及9個 logical disk IO，
   而 RDBMS 的 TX 只涉及2個 logical disk IO
 - NoSQL 只是同時能處理更多更多的 TX ，但是每一 TX 卻要用上更多的時間
 
