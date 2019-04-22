@@ -1,10 +1,10 @@
-title:             HeatLai's Blog
+title:             Heat's Blog
 email:             hitgunlai@gmail.com
 description:       聽說寫部落格考試會得一百分
-author:            HeatLai
+author:            Heat Lai
 baseurl:           "/"
 #url:               "https://heat.hypenode.tw"
-keywords:          ["blog", "heat", "lai", "HeatLai"]
+keywords:          ["blog", "heat", "lai"]
 
 # Social Profiles
 #twitter_username:  SBootstrap
