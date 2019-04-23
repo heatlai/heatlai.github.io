@@ -85,7 +85,7 @@ COMMIT;
   如果沒有 RDBMS 的 Isolation 會需要額外的 Locking 系統，
   
 ###### 兩大陣營
-  - MMVC： Oracle / PostgreSQL
+  - MVCC： Oracle / PostgreSQL
   - SXLock： DB2 / MySQL / MS-SQL
  
 ###### Example: 在沒有 isolation 下的提款程式
