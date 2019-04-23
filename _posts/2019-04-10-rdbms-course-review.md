@@ -83,6 +83,10 @@ COMMIT;
 - 同一筆資料，RDBMS 保證不會同時被兩個 TX 改動
 - 要避免 race condition，會需要LOCK (上鎖)，RDBMS 能自動管理 LOCK，
   如果沒有 RDBMS 的 Isolation 會需要額外的 Locking 系統，
+  
+###### 兩大陣營
+  - MMVC： Oracle / PostgreSQL
+  - SXLock： DB2 / MySQL / MS-SQL
  
 ###### Example: 在沒有 isolation 下的提款程式
 ```
@@ -158,7 +162,8 @@ Facebook 一開始也是用 PHP + MySQL 就上線了，
 要跑sql的話，請找一個同事幫忙監督，避免出錯一鍋熟
 
 #### 盡量遵守 3NF
-不用 3NF 很可能會搞不清楚現在有哪些資料，最後也沒人能搞清楚
+不用 3NF 很可能會搞不清楚現在有哪些資料，最後也沒人能搞清楚  
+參考資料 維基百科：[第三正規化](https://zh.wikipedia.org/wiki/%E7%AC%AC%E4%B8%89%E6%AD%A3%E8%A6%8F%E5%8C%96)
 
 #### 2 phase commit 範例說明
 ###### 使用 2pc 的轉帳:
