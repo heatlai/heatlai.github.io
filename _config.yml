@@ -15,8 +15,8 @@ github_username:   heatlai
 # Build settings
 timezone:          Asia/Taipei
 markdown:          kramdown
-paginate:          5
-paginate_path:     "/posts/page:num/"
+#paginate:          5
+#paginate_path:     "/posts/page:num/"
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
+  #- jekyll-feed
+  #- jekyll-paginate
