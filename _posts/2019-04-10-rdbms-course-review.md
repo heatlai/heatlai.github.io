@@ -21,7 +21,7 @@ tags: [Database, RDBMS]
 3. 中小型系統，RDBMS 效能已足夠
 4. RDBMS 比 NoSQL 更加安全
 
-## 更快的開發速度
+## 比NoSQL更快的開發速度
 #### 1. multiple records atomicity 是不能迴避的需求，NoSQL做2pc很麻煩的
 例如：
   - 把錢從用戶A轉到用戶B(轉帳)
