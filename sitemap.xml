@@ -1,92 +1,59 @@
+---
+layout: null
+sitemap:
+    exclude: 'yes'
+    lastmod: 2014-01-23
+    priority: 0.7
+    changefreq: 'monthly'
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://heat.hypenode.tw/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2019/04/10/rdbms-course-review/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/11/07/mac-docker-php-xdebug-phpstorm/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/10/18/centos-install-supervisor/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/08/07/php-get-headers-ssl-failed/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/07/01/mac-homebrew-install-php72/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/06/25/mac-iterm2-oh-my-zsh/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/06/11/ecmascript-get-top-level-domain/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/06/10/nginx-too-many-open-files/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/05/04/php-duplicates-in-array/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/05/03/php-deep-in-array/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/05/02/php-snakecase-convert-camelcase/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/03/16/php-unique-db-data-with-primary-key/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.17</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/03/05/php-query-keep-native-type/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.13</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/02/18/php-in-cli/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.11</priority>
-</url>
-<url>
-  <loc>https://heat.hypenode.tw/post/2018/02/18/php-strict-mode/</loc>
-  <lastmod>2019-04-22T10:05:42+00:00</lastmod>
-  <priority>0.09</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
+    {% unless post.published == false %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        {% if post.sitemap.lastmod %}
+        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+        {% elsif post.date %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        {% if post.sitemap.changefreq %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+        {% else %}
+        <changefreq>monthly</changefreq>
+        {% endif %}
+        {% if post.sitemap.priority %}
+        <priority>{{ post.sitemap.priority }}</priority>
+        {% else %}
+        <priority>0.5</priority>
+        {% endif %}
+    </url>
+    {% endunless %}
+    {% endfor %}
+    {% for page in site.pages %}
+    {% unless page.sitemap.exclude == "yes" %}
+    <url>
+        <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+        {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+        {% elsif page.date %}
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+        {% else %}
+        <changefreq>monthly</changefreq>
+        {% endif %}
+        {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+        {% else %}
+        <priority>0.3</priority>
+        {% endif %}
+    </url>
+    {% endunless %}
+    {% endfor %}
 </urlset>
