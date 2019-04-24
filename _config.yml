@@ -12,6 +12,10 @@ keywords:          ["blog", "heat", "lai"]
 github_username:   heatlai
 #facebook_username: StartBootstrap
 
+# Disqus Comments
+disqus:
+  shortname: heatlai
+
 # Build settings
 timezone:          Asia/Taipei
 markdown:          kramdown

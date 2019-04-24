@@ -18,6 +18,9 @@ layout: default
           <h2 class="subheading">{{ page.subtitle }}</h2>
           {% endif %}
           <span class="meta">{{ site.author }} on {{ page.date | date: "%Y-%m-%d" }}</span>
+          <span class="meta">
+            <a class="disqus-comment-count" href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
+          </span>
           <!--<span class="meta">Posted by-->
             <!--<a href="{{"/about" | relative_url }}">{{ site.author }}</a>-->
             <!--on {{ page.date | date: "%Y-%m-%d" }}</span>-->
@@ -27,7 +30,7 @@ layout: default
   </div>
 </header>
 
-<div class="container">
+<div class="container" data-env="{{jekyll.environment}}">
   <div class="row">
     <div class="col-lg-10 col-md-10 mx-auto">
 
@@ -38,7 +41,7 @@ layout: default
       {% if page.tags != empty %}
       <h6>Tags : [
         {% for tag in page.tags %}
-          <a class="tag" href="/tags/list.html#{{ tag | slugify }}">{{ tag }}</a>
+          <a class="tag" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
       ]
       </h6>
@@ -58,4 +61,7 @@ layout: default
 
     </div>
   </div>
+  {% if site.disqus.shortname %}
+    {% include disqus.html %}
+  {% endif %}
 </div>

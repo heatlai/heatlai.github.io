@@ -9,6 +9,11 @@ header.masthead .post-heading .meta {
     font-style: initial;
 }
 
+.disqus-comment-count {
+    font-style: italic;
+    font-size: medium;
+}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 90vw;

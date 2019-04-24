@@ -12,6 +12,7 @@ background: '/img/bg-post.jpg'
     <li class="archive-li">
         <span class="archive-article-date">{{ post.date | date: '%b %d' }}</span>
         <a class="archive-article-title" href="{{ post.url }}">{{ post.title }}</a>
+        <a class="disqus-comment-count" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
     </li>
     {% endfor %}
 </ul>
