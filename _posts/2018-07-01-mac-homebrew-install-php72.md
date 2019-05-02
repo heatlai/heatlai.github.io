@@ -6,7 +6,7 @@ background: '/img/posts/05.jpg'
 
 date: 2018-07-01
 
-tags: [Mac]
+tags: [Mac, PHP]
 ---
 # 安裝 Homebrew
 [Homebrew](https://brew.sh/index_zh-tw)
