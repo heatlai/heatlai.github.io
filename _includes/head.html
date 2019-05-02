@@ -8,8 +8,10 @@
     {% else %}{{ site.title | escape }}{% endif %}
   </title>
 
-  {% if page.title %}
+  {% if page.description and page.description != '' %}
   <meta name="description" content="{{ page.description | default: page.title | strip_html | normalize_whitespace | escape }}">
+  {% elsif page.title %}
+  <meta name="description" content="{{ page.subtitle | default: page.title | strip_html | normalize_whitespace | escape }}">
   {% else %}
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   {% endif %}
