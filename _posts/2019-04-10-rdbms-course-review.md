@@ -2,7 +2,7 @@
 layout: post
 title:  'RDBMS淺談 上課筆記'
 subtitle: 'Why choose RDBMS course review'
-background: '/img/posts/02.jpg'
+background: '/img/posts/03.jpg'
 description: "為何選擇RDBMS，什麼是ACID，對比於NoSQL有哪些好處，RDBMS開發時應注意哪些事。"
 date: 2019-04-10
 category: Develop

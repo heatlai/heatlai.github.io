@@ -2,7 +2,7 @@
 layout: post
 title:  '自己動手做Dockerfile CentOS 6 + PHP 5.2 + PHP extension imagick + apache + 改時區/系統語言'
 subtitle: 'DIY Dockerfile CentOS 6 + PHP 5.2 + PHP extension imagick + apache + change Timezone and System Language'
-background: '/img/posts/02.jpg'
+background: '/img/posts/04.jpg'
 description: ""
 date: 2019-05-02
 category: Develop
