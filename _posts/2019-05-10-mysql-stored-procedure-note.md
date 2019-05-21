@@ -165,3 +165,50 @@ print_r($res);
 
 ?>
 ```
+
+## 範例：遞迴查詢
+
+```sql
+DROP TABLE IF EXISTS `source_table`;
+
+CREATE TABLE `source_table` (
+  `Type_id` int(11) NOT NULL,
+  `Type_id_p` int(11) DEFAULT NULL,
+  `Type_name` varchar(45) DEFAULT NULL,
+  `C_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `source_table` VALUES (0,NULL,'Root',NULL),(1,0,'Food',NULL),(2,1,'Fast food',NULL),(3,2,'American',NULL),(4,2,'Japan',NULL),(5,3,'McDonald',NULL),(6,4,'Ichran',NULL);
+
+DELIMITER //
+
+DROP PROCEDURE IF EXISTS `getParent`//
+
+CREATE PROCEDURE `getParent`(
+  IN `typeId` int,
+  OUT `result` varchar(255)
+)
+BEGIN
+  DECLARE `parentTypeId` int;
+  DECLARE `currentTypeName` varchar(255);
+  SELECT `Type_id_p`, `Type_name` INTO `parentTypeId`, `currentTypeName`
+  FROM source_table
+  WHERE `Type_id` = `typeId`;
+
+  IF `parentTypeId` IS NOT NULL THEN
+    CALL `getParent`(`parentTypeId`, `result`);
+    SET `result` := CONCAT( IFNULL(`result`, ''), ' > ', `currentTypeName`);
+  ELSE
+    SET `result` := CONCAT( IFNULL(`result`, ''), `currentTypeName`);
+
+  END IF;
+
+END//
+
+DELIMITER ;
+
+call getParent( 5, @result);
+
+select @result;
+```
