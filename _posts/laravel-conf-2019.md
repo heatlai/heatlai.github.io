@@ -5,7 +5,7 @@ subtitle: 'Laravel Conf 2019 Review'
 background: '/img/posts/06.jpg'
 description: ""
 #date: 2019-07-13
-date: 9999-01-01
+date: 9999-12-31
 category: Develop
 tags: [PHP, Laravel]
 ---
