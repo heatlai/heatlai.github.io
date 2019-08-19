@@ -19,7 +19,7 @@ order.example.com -> order-server:7788
 之類的事
 
 ## 架構 
-User <-HTTPS-> AWS Load Balancer <-HTTP-> 反向代理 Nginx <-HTTP-> App Nginx <-9000-> PHP-FPM
+User <-HTTPS-> AWS Load Balancer <-HTTP-> 反向代理 Nginx <-HTTP-> App Nginx <-fastcgi-> PHP-FPM
 
 ## 踩雷
 proxy 通了，但是 URL 打的是 https://xxx.com PHP 接收到的 request 卻不是 HTTPS，
