@@ -62,8 +62,8 @@ map $http_x_forwarded_port $x_port {
 # 後端 app server 群組
 upstream app_group 
 {
-	server app-1:7788;
-	server app-2:7788;
+	server app-1:80;
+	server app-2:80;
 }
 
 server {
