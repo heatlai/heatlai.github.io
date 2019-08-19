@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  '[Nginx] 用 AWS Load Balancer 做 Nginx 反向代理 '
+title:  '[Nginx] 用 AWS Load Balancer 做 Nginx 反向代理'
 subtitle: 'Nginx - Reverse Proxy using AWS Load Balancer'
 background: '/img/posts/01.jpg'
 description: "Nginx Reverse Proxy, using AWS Load Balancer, debug PHP check https"
