@@ -19,18 +19,19 @@ order.example.com -> order-server:7788
 之類的事
 
 ## 架構 
-User <-HTTPS-> AWS Load Balancer <-HTTP-> 反向代理 Nginx <-HTTP-> App Nginx <-fastcgi-> PHP-FPM
+User <- `HTTPS` -> AWS Load Balancer <- `HTTP` -> 反向代理 Nginx <- `HTTP` -> App Nginx <- `fastcgi` -> PHP-FPM
 
 ## 踩雷
-proxy 通了，但是 URL 打的是 https://xxx.com PHP 接收到的 request 卻不是 HTTPS，
+proxy 通了，但是 URL 打的是 https://xxx.com ，PHP 接收到的 request 卻不是 HTTPS，  
 原因是過了 AWS Load Balancer 之後就是 HTTP 連線了，所以需要承接 HTTPS 參數往後送。  
 下面 config 是同時需要 HTTP 跟 HTTPS 時才這樣寫，
-如果對外服務只允許 https 時，可以寫 force redirect HTTP to HTTPS，
-然後 App Nginx config 寫死 `fastcgi_param HTTPS "on"` 就不需要檢查 X-Forwarded-Proto
+如果對外服務只允許 https 時，可以寫 force redirect HTTP to HTTPS，  
+然後 App Nginx config 寫死 `fastcgi_param HTTPS "on"` 這樣就不需要檢查 X-Forwarded-Proto 了
 
 ### AWS Load Balancer Force Redirect HTTP to HTTPS (optional)
 ```
 Listener : HTTP  
+
 [Rule]
 IF ： Requests otherwise not routed  
 Redirect(301) to https://#{host}:443/#{path}?#{query}
