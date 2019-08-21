@@ -9,8 +9,7 @@ date: 2018-06-25
 tags: [Mac]
 ---
 # 安裝 Homebrew
-[Homebrew](https://brew.sh/index_zh-tw)
-
+<a href="https://brew.sh/index_zh-tw" target="_blank">Homebrew</a>
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -55,7 +54,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 exec $SHELL
 ```
 
-# 修改 iTerm2 的 color scheme (選用)
+# 修改 iTerm2 的 color scheme
 
 ```
 Preferences > Profiles > Colors
@@ -71,7 +70,7 @@ Preferences > Profiles > Text
 (選用) Size 用 18 
 ```
 
-# CLI Syntax highlighting (選用)
+# CLI Syntax highlighting 高亮
 
 ```
 brew install zsh-syntax-highlighting
@@ -80,4 +79,37 @@ vim ~/.zshrc
 
 # 加在檔案最後面
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
+
+# 自動命令推薦
+- 要使用補完的指令 按 → 鍵
+
+```bash
+cd ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-autosuggestions
+vi ~/.zshrc
+
+找到 plugins=(
+    git
+    zsh-autosuggestions   # 加上這行
+)
+
+source ~/.zshrc
+```
+
+# 修改 iTerm2 跳至上下一個單字 熱鍵
+Path : Preferences → Profiles → Keys
+- 上一個單字 ⌥←
+
+```
+Keyboard Shortcut: ⌥←
+Action: Send Escape Sequence
+Esc+: b
+```
+- 下一個單字 ⌥→
+
+```
+Keyboard Shortcut: ⌥→
+Action: Send Escape Sequence
+Esc+: f
 ```
