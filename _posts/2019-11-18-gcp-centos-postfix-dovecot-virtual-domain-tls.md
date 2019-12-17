@@ -125,7 +125,9 @@ chown vmail. /var/mail/vhosts
 ```bash
 # 建立資料檔 後面設定會用到
 touch /etc/postfix/virtual_domains
-touch /etc/postfix/virtual_aliases && postmap /etc/postfix/virtual_aliases
+touch /etc/postfix/virtual_aliases \
+    && echo "root@mail.example.com\troot@localhost" >> /etc/postfix/virtual_aliases \
+    && postmap /etc/postfix/virtual_aliases
 touch /etc/postfix/virtual_mailbox && postmap /etc/postfix/virtual_mailbox
 
 # DH parameters
