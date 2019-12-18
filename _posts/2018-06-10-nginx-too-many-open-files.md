@@ -62,6 +62,8 @@ ulimit -n
 
 ```
 su - nginx
+// 如果出現 This account is currently not available.
+// 改用 sudo -u nginx bash
 
 ulimit -n
 1048576
