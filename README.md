@@ -7,3 +7,4 @@ bundle _1.12_ install
 bundle install  
 bundle exec jekyll build
 bundle exec jekyll serve
+bundle exec jekyll serve --watch

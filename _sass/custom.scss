@@ -1,0 +1,53 @@
+pre {
+    padding: 1rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+}
+
+header.masthead .post-heading .meta {
+    text-align: right;
+    font-style: initial;
+    &.read-time {
+        font-size: small;
+        color: mediumspringgreen;
+    }
+}
+
+.disqus-comment-count {
+    font-style: italic;
+    font-size: medium;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90vw;
+    }
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.post-content {
+    margin-bottom: 1rem;
+}
+
+.tags {
+    a:before {
+        content: "/\00a0";
+        color: dimgray;
+        display: inline-block;
+    }
+
+    a:first-child:before {
+        content: "";
+        padding: 0;
+    }
+}
+
+#disqus_thread {
+    display: none;
+    @media only screen and (min-width: 600px) {
+        display: block;
+    }
+}
