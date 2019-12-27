@@ -52,6 +52,7 @@ banaction_allports = firewallcmd-ipset[actiontype=<allports>]
 ```bash
 vi /etc/fail2ban/jail.local
 
+[DEFAULT]
 # 不想擋的IP or CIDR mask
 ignoreip = 127.0.0.1 192.168.0.0/16
 
