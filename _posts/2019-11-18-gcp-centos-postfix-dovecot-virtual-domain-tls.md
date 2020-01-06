@@ -149,10 +149,10 @@ vi /etc/postfix/main.cf
 default_privs = vmail
 myhostname = mail.example.com
 mydomain = example.com
-myorigin = $mydomain
+myorigin = $myhostname
 inet_interfaces = all
 inet_protocols = ipv4
-mydestination = localhost
+mydestination = $myhostname, localhost.$mydomain, localhost
 mynetworks = 127.0.0.0/8
 home_mailbox = Maildir/
 smtpd_banner = SMTP ready.
