@@ -51,3 +51,17 @@ header.masthead .post-heading .meta {
         display: block;
     }
 }
+
+article {
+    .h1, h1 {
+        border-bottom-width: 5px;
+        border-bottom: darkgray;
+        border-bottom-style: solid;
+    }
+
+    .h2, h2 {
+        border-bottom-width: 5px;
+        border-bottom: darkgray;
+        border-bottom-style: dotted;
+    }
+}
