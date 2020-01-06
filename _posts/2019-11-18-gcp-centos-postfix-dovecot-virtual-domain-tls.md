@@ -71,6 +71,7 @@ netstat -tpln
 - 完整 email address: john@example.com
 - Mail Server `FQDN` : mail.example.com `替換後面[FQDN]的地方`
 - Top Level Domain: example.com
+
 ```bash
 yum -y install wget telnet git socat
 yum -y remove sendmail # 刪除 sendmail
@@ -820,7 +821,8 @@ else
 fi
 ```
 
-## 黑洞信箱 ( no-reply@example.com )
+## 其他設定
+### 黑洞信箱 ( no-reply@example.com )
 - 設定一個 address 名稱 `devnull` 儲存路徑指向 `/dev/null` 丟棄
 
 ```bash
@@ -850,7 +852,7 @@ postmap /etc/postfix/virtual_aliases
 systemctl reload postfix
 ```
 
-## 系統郵件轉寄至私人信箱
+### 系統郵件轉寄至私人信箱
 - 設定 `root@localhost` 轉寄至 `john@example.com`
 
 ```bash
