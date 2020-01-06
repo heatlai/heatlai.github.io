@@ -821,7 +821,8 @@ fi
 ```
 
 ## 黑洞信箱 ( no-reply@example.com )
-- 設定一個 address `devnull` 儲存路徑指向 `/dev/null` 丟棄
+- 設定一個 address 名稱 `devnull` 儲存路徑指向 `/dev/null` 丟棄
+
 ```bash
 vi /etc/aliases
 
@@ -834,6 +835,7 @@ devnull:        /dev/null
 newaliases
 ```
 - 設定 `no-reply@example.com` 轉寄至 `devnull@localhost`
+
 ```bash
 # 檔名來源 main.cf : 
 # virtual_alias_maps = hash:/etc/postfix/virtual_aliases
@@ -850,6 +852,7 @@ systemctl reload postfix
 
 ## 系統郵件轉寄至私人信箱
 - 設定 `root@localhost` 轉寄至 `john@example.com`
+
 ```bash
 # 檔名來源 main.cf : 
 # virtual_alias_maps = hash:/etc/postfix/virtual_aliases
