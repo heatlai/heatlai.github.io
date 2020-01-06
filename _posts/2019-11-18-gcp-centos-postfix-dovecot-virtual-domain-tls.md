@@ -819,3 +819,47 @@ else
   echo $(printf "${EMAIL} ${HASH_PASSWORD}" | base64 -w 0)
 fi
 ```
+
+## 黑洞信箱 ( no-reply@example.com )
+- 設定一個 address `devnull` 儲存路徑指向 `/dev/null` 丟棄
+```bash
+vi /etc/aliases
+
+# 增加下面這個
+devnull:        /dev/null
+
+:wq
+
+# 套用 alias
+newaliases
+```
+- 設定 `no-reply@example.com` 轉寄至 `devnull@localhost`
+```bash
+# 檔名來源 main.cf : 
+# virtual_alias_maps = hash:/etc/postfix/virtual_aliases
+vi /etc/postfix/virtual_aliases
+
+no-reply@example.com       devnull
+
+:wq
+postmap /etc/postfix/virtual_aliases
+
+# 重啟
+systemctl reload postfix
+```
+
+## 系統郵件轉寄至私人信箱
+- 設定 `root@localhost` 轉寄至 `john@example.com`
+```bash
+# 檔名來源 main.cf : 
+# virtual_alias_maps = hash:/etc/postfix/virtual_aliases
+vi /etc/postfix/virtual_aliases
+
+root       john@example.com
+
+:wq
+postmap /etc/postfix/virtual_aliases
+
+# 重啟
+systemctl reload postfix
+```
