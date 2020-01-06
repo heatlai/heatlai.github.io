@@ -11,7 +11,7 @@ tags: [MySQL, Database, RDBMS]
 
 # Stored Procedure
 Stored Procedure 是在資料庫中建立的一組工作程序，
-個人理解就是寫function存在DB裡，可以是一個簡單動作也可以是複雜的一連串動作。
+個人理解就是把不想在 App Server 上跑的部分，寫 function 在 DB 裡跑。
 有些需求會反覆用到DB，例如做統計報表，或是不想把邏輯放在App，例如用戶登入，
 都可以寫一個Stored Procedure一次完成要執行的工作。
 
