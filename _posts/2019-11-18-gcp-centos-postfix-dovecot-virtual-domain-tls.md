@@ -92,20 +92,22 @@ cd acme.sh
 ./acme.sh --install
 source ~/.bashrc
 acme.sh --version
+# 如果 server 上有開 web 可把 --standalone 換成 --nginx or --apache
+# 會自動修改 web config 驗證完再改回來 
 acme.sh --issue -k 4096 --standalone --log -d [FQDN]
-acme.sh --installcert -d [FQDN] \
+acme.sh --install-cert -d [FQDN] \
         --key-file   /etc/ssl/certs/[FQDN]/[FQDN].key \
         --fullchain-file /etc/ssl/certs/[FQDN]/fullchain.cer
 
-# 等整個 mail service 設定完再跑一次有 --reloadcmd 的 --installcert
-# 這樣自動更新證書時就會順便重載 mail service
-#acme.sh --installcert -d [FQDN] \
-#        --key-file   /etc/ssl/certs/[FQDN]/[FQDN].key \
-#        --fullchain-file /etc/ssl/certs/[FQDN]/fullchain.cer \
-#        --reloadcmd  "systemctl reload postfix && systemctl reload dovecot"
-
 # 確認證書 要有 fullchain.cer, [FQDN].key 兩個檔案
 ls /etc/ssl/certs/[FQDN]
+
+# 等整個 mail service 設定完再跑一次包含 --reloadcmd 的 --install-cert
+# 這樣自動更新證書時就會順便重載 mail service
+#acme.sh --install-cert -d [FQDN] \
+#        --key-file   /etc/ssl/certs/[FQDN]/[FQDN].key \
+#        --fullchain-file /etc/ssl/certs/[FQDN]/fullchain.cer \
+#        --reloadcmd  "systemctl reload postfix dovecot"
 ```
 
 ### 建立一個實體使用者給 service 操作虛擬信箱
