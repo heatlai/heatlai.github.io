@@ -3,11 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-{% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
-{% else %}
-<header class="masthead">
-{% endif %}
+<header class="masthead"{% if page.background %} style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')"{% endif %}>
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -74,3 +70,6 @@ layout: default
   {% endif %}
   {% endcomment %}
 </div>
+
+<!-- Markdown Header Create Links -->
+<script>for(let h of document.querySelectorAll('h2[id],h3[id],h4[id]'))h.innerHTML+=` <a href="#${h.id}" aria-hidden="true">#</a>`</script>
