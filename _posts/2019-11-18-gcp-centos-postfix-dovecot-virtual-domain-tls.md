@@ -870,3 +870,116 @@ postmap /etc/postfix/virtual_aliases
 # 重啟
 systemctl reload postfix
 ```
+
+### SPF (Sender Policy Framework)
+```bash
+# SPF DNS Record
+example.com. IN TXT "v=spf1 mx a ~all"
+# Mailgun
+example.com. IN TXT "v=spf1 include:mailgun.org ~all"
+# Gmail
+example.com. IN TXT "v=spf1 include:_spf.google.com ~all"
+
+# 參數說明
+# ip4:x.x.x.x 可指定 IP 或 CIDR x.x.x.x/24
+# a:mail.example.com 不指定網域時就是指 example.com 本身
+# mx:mail.example.com 不指定網域時就是指 example.com 本身
+# include:mailgun.org 包含 mailgun.org 的 SPF 設定
+# ~all SoftFail 錯誤但不拒收
+# -all Fail 錯誤要拒收
+```
+### DKIM (DomainKeys Identified Mail)
+#### 安裝設定
+```bash
+yum install -y opendkim
+
+vim /etc/opendkim.conf
+
+Mode sv
+# 加註 KeyFile
+#KeyFile        /etc/opendkim/keys/default.private
+KeyTable /etc/opendkim/KeyTable
+SigningTable refile:/etc/opendkim/SigningTable
+ExternalIgnoreList refile:/etc/opendkim/TrustedHosts
+InternalHosts refile:/etc/opendkim/TrustedHosts
+```
+#### Postfix 設定
+```bash
+vim /etc/postfix/main.cf
+
+#
+# opendkim
+#
+smtpd_milters = inet:localhost:8891
+non_smtpd_milters = $smtpd_milters
+milter_default_action = accept
+```
+#### DKIM 新增 Shell Script
+```bash
+#!/usr/bin/env bash
+
+#
+# DKIM - add domain key
+#
+# Author: heatlai
+#
+
+# check inputs
+if [ -z "$1" ]; then
+    echo "usage:$0 [domain]"
+    exit 128
+fi
+
+if ! hash opendkim-genkey 2>/dev/null; then
+    echo "command \"opendkim-genkey\" not exists. it's required."
+    exit 1
+fi
+
+if ! hash opendkim 2>/dev/null; then
+    echo "command \"opendkim\" not exists. it's required."
+    exit 1
+fi
+
+if [ ! -f /etc/opendkim/keys/${DOMAIN}/default.private ]; then
+    mkdir -p /etc/opendkim/keys/${DOMAIN}
+    opendkim-genkey -D /etc/opendkim/keys/${DOMAIN}/ -d ${DOMAIN} -s default
+    chown -R opendkim. /etc/opendkim/keys/${DOMAIN}
+    echo "default._domainkey.${DOMAIN} ${DOMAIN}:default:/etc/opendkim/keys/${DOMAIN}/default.private" >> /etc/opendkim/KeyTable
+    sed -i -e "/#\*@example.com/a\\*@${DOMAIN} default._domainkey.${DOMAIN}" /etc/opendkim/SigningTable
+    opendkim reload
+fi
+```
+- 執行後將 Public Key 加到 DNS Record
+
+```bash
+cat /etc/opendkim/keys/${DOMAIN}/default.txt
+# 把 default.txt 的內容加到 DNS，像是下面這樣
+# default._domainkey IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDucWOlzIiyahWtQ9jgPjnfZp7x6K4L8Y20wFlmASr+eUlimC0w52SKIFancZILZeliPPjmaab4fHsvM1VJfF80EhMgTUKYQy7lOBBTjZVLmDfHAFzmUd3KOoaNbZ0tDiuayjrV1jAB82wHlrroGFBYQncpHbCUxlm31bu4WjLElwIDAQAB"
+```
+
+#### DKIM 刪除 Shell Script
+- 執行後把 Public Key 從 DNS Record 上刪除
+
+```bash
+#!/usr/bin/env bash
+
+#
+# DKIM - delete domain key
+#
+# Author: heatlai
+#
+
+rm -rf "/etc/opendkim/keys/${DOMAIN}"
+sed -i -e "/${DOMAIN}:/d" /etc/opendkim/KeyTable
+sed -i -e "/@${DOMAIN} /d" /etc/opendkim/SigningTable
+opendkim reload
+```
+
+### DMARC (Domain-based Message Authentication, Reporting & Conformance)
+- 須先設定 SPF + DKIM
+
+```bash
+# DMARC DNS Record
+_dmarc.example.com. IN TXT "v=DMARC1; p=none; rua=mailto:postmaster@example.com"
+# rua 錯誤時送信給誰
+```
