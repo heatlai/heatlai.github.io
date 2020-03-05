@@ -1,2 +1,3 @@
 User-agent: *
+Sitemap: https://heat.hypenode.tw/sitemap.xml
 Disallow:
