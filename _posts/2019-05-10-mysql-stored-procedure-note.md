@@ -104,8 +104,6 @@ print_r($res);
 ?>
 ```
 
-{% include adsense-in-article.md %}
-
 ## 範例：統計報表
 `計算結果後寫入另一張表`
 
