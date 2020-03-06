@@ -1,4 +1,4 @@
-<!-- Google AdSense 文章內廣告 -->
+<!-- Google AdSense 文章內廣告md -->
 {% if site.ad_enable %}
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
@@ -11,4 +11,4 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 {% endif %}
-<!-- End Google AdSense 文章內廣告 -->
+<!-- End Google AdSense 文章內廣告md -->
