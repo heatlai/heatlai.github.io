@@ -31,11 +31,21 @@ layout: default
 
 <div class="container" data-env="{{jekyll.environment}}">
   <div class="row">
-    <article class="col-lg-10 col-md-10 mx-auto post-content">
+    <div class="col-xl-2">
+      {% if site.ad_enable %}
+      <div class="ads">{% include adsense.html %}</div>
+      <hr class="hidden-in-xl">
+      {% endif %}
+    </div>
+    <article class="col-xl-8 mx-auto post-content">
 
       {{ content }}
 
       <hr>
+      {% if site.ad_enable %}
+      <div class="ads hidden-in-xl">{% include adsense.html %}</div>
+      <hr>
+      {% endif %}
       
       {% if page.tags != empty %}
       <h6 class="tags">Tags : [

@@ -7,6 +7,8 @@ permalink:         "/post/:year/:month/:day/:title/"
 url:               "https://heat.hypenode.tw"
 keywords:          ["blog", "heat", "lai"]
 
+ad_enable: true
+
 # Social Profiles
 #twitter_username:  SBootstrap
 github_username:   heatlai

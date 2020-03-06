@@ -78,3 +78,13 @@ article {
 img {
     max-width: 100%;
 }
+
+.hidden-in-xl {
+    @media(min-width: 1200px) {
+        display: none !important;
+    }
+}
+
+.dsn {
+    display: none !important;
+}
