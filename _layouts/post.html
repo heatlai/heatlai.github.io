@@ -30,20 +30,30 @@ layout: default
 </header>
 
 <div class="container" data-env="{{jekyll.environment}}">
+  <div id="left-side-ads" class="ad-show-min1540 left" style="position: absolute; left: 0; text-align: right; width: calc((97vw - 1140px) / 2); margin-left: 5px; min-width: 200px">
+    {% if site.ad_enable %}
+    <div class="ads show-min-1540">{% include adsense.html %}</div>
+    {% endif %}
+  </div>
+  <div id="right-side-ads" class="ad-show-min1540 right" style="position: absolute; right: 0; text-align: left; width: calc((97vw - 1140px) / 2); margin-right: 5px; min-width: 200px">
+    {% if site.ad_enable %}
+    <div class="ads">{% include adsense.html %}</div>
+    {% endif %}
+  </div>
   <div class="row">
-    <div class="col-xl-2">
+    <article class="col mx-auto post-content">
       {% if site.ad_enable %}
-      <div class="ads">{% include adsense.html %}</div>
-      <hr class="hidden-in-xl">
+      <div class="ad-show-max1538">
+        <div class="ads">{% include adsense.html %}</div>
+        <hr>
+      </div>
       {% endif %}
-    </div>
-    <article class="col-xl-8 mx-auto post-content">
 
       {{ content }}
 
       <hr>
       {% if site.ad_enable %}
-      <div class="ads hidden-in-xl">{% include adsense.html %}</div>
+      <div class="ads">{% include adsense.html %}</div>
       <hr>
       {% endif %}
       
