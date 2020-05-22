@@ -4,7 +4,8 @@ title:  '[Mac] iTerm2 + oh-my-zsh + powerlevel10k 安裝'
 subtitle: 'Mac - iTerm2 + oh-my-zsh + powerlevel10k install'
 background: '/img/posts/04.jpg'
 
-date: 2020-05-22
+date: 2018-06-25
+updated_at: 2020-05-22
 
 tags: [Mac]
 ---
