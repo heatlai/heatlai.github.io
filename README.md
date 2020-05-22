@@ -3,9 +3,11 @@
 ## install
 brew install ruby  
 gem install jekyll  
-gem install bundler -v 1.12  
-bundle _1.12_ install  
+gem install bundler  
 bundle install  
+> install 出錯的話  
+    gem install bundler -v 1.12  
+    bundle _1.12_ install
 
 ## run
 bundle exec jekyll build  
