@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  '[Mac] iTerm2 + oh-my-zsh 安裝'
-subtitle: 'Mac - iTerm2 + oh-my-zsh install'
+title:  '[Mac] iTerm2 + oh-my-zsh + powerlevel10k 安裝'
+subtitle: 'Mac - iTerm2 + oh-my-zsh + powerlevel10k install'
 background: '/img/posts/04.jpg'
 
-date: 2018-06-25
+date: 2020-05-22
 
 tags: [Mac]
 ---
@@ -31,27 +31,18 @@ brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 ```
 
-# 安裝 powerlevel9k (oh-my-zsh 的 theme) 
+# 安裝 powerlevel10k (oh-my-zsh 的 theme) 
 ```
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+p10k configure
 ```
 
-# 修改 zsh theme 為 powerlevel9k
+# 修改 zsh theme 為 powerlevel10k
 ```
 vim ~/.zshrc
 
 # 主題
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# POWERLEVEL9K 字型設定
-POWERLEVEL9K_MODE='nerdfont-complete'
-# command line 左邊想顯示的內容
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
-# command line 右邊想顯示的內容
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-# 儲存後套用設定
-exec $SHELL
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 # 修改 iTerm2 的 color scheme
@@ -71,30 +62,31 @@ Preferences > Profiles > Text
 ```
 
 # CLI Syntax highlighting 高亮
-
 ```
-brew install zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 vim ~/.zshrc
 
-# 加在檔案最後面
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(
+    zsh-syntax-highlighting # 加上這行
+)
+
+# 修改設定要重啟zsh
 ```
 
 # 自動命令推薦
 - 要使用補完的指令 按 → 鍵
 
 ```bash
-cd ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-autosuggestions
-vi ~/.zshrc
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-找到 plugins=(
-    git
+vim ~/.zshrc
+
+plugins=(
     zsh-autosuggestions   # 加上這行
 )
 
-source ~/.zshrc
+# 修改設定要重啟zsh
 ```
 
 # 修改 iTerm2 跳至上下一個單字 熱鍵
