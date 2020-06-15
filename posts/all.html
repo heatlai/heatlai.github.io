@@ -1,0 +1,21 @@
+---
+layout: page
+title: Posts
+description: '所有文章'
+background: '/img/bg-post.jpg'
+---
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+<h2 class="archive-year">{{ year.name }}</h2>
+<ul class="archive-ul">
+    {% for post in year.items %}
+    <li class="archive-li">
+        <span class="archive-article-date">{{ post.date | date: '%b %d' }}</span>
+        <a class="archive-article-title" href="{{ post.url }}">{{ post.title }}</a>
+        {% comment %}
+        <a class="disqus-comment-count" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
+        {% endcomment %}
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}

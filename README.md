@@ -15,5 +15,5 @@ bundle exec jekyll serve
 bundle exec jekyll serve --watch  
 > => "http://localhost:4000"
 
-bundle exec jekyll serve --host myhost --port 7788
-> => "http://myhost:7788"
+bundle exec jekyll serve --host dev.hypenode.tw --port 7788
+> => "http://dev.hypenode.tw:7788"

@@ -5,7 +5,7 @@ author:            Heat Lai
 baseurl:           "/"
 permalink:         "/post/:year/:month/:day/:title/"
 url:               "https://heat.hypenode.tw"
-keywords:          ["blog", "heat", "lai"]
+keywords:          ["blog", "heat", "lai", "Heat Lai"]
 
 ad_enable: true
 
@@ -25,8 +25,9 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-#paginate:          5
-#paginate_path:     "/posts/page:num/"
+paginate:          5
+paginate_path:     "/posts/page:num/"
 plugins:
-  #- jekyll-feed
-  #- jekyll-paginate
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
