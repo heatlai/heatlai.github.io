@@ -11,8 +11,9 @@ ad_enable: true
 
 # Social Profiles
 #twitter_username:  SBootstrap
-github_username:   heatlai
+#github_username:   heatlai
 #facebook_username: StartBootstrap
+linkedin_username: heatlai
 
 # Disqus Comments
 disqus:
