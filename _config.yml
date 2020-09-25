@@ -32,4 +32,4 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
-theme: jekyll-theme-cayman
+  - jekyll-github-metadata
