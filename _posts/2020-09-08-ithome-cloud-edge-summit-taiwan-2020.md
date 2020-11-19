@@ -66,7 +66,7 @@ API Gateway ⇢ Lambda(跑縮圖程式) ⇢ S3(縮圖) ⇢  CloudFront(CDN)
 [簡報](https://github.com/Jian-Min-Huang/tech-note/wiki/iThome-Cloud-Edge-Summit-Taiwan-2020)  
 
 ## 14:20 [102] Infrastructure as code with Terraform 從零開始導入 Terraform
-講者：思華科技 DevOps Engineer 張哲嘉
+講者：思華科技 DevOps Engineer 張哲嘉  
 [Terraform 官方網站](https://www.terraform.io)  
 [投影片](https://slides.com/chechiachang/terraform-introduction)  
 [講稿](https://chechia.net/post/terraform-infrastructure-as-code-transcript/)  
