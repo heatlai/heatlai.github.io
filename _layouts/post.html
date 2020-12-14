@@ -34,6 +34,7 @@ layout: default
 </header>
 
 <div class="container" data-env="{{jekyll.environment}}">
+  {% comment %}
   <div id="left-side-ads" class="ad-show-min1540 left" style="position: absolute; left: 0; text-align: right; width: calc((97vw - 1140px) / 2); margin-left: 5px; min-width: 200px">
     {% if site.ad_enable %}
     <div class="ads show-min-1540">{% include adsense.html %}</div>
@@ -44,13 +45,12 @@ layout: default
     <div class="ads">{% include adsense.html %}</div>
     {% endif %}
   </div>
+  {% endcomment %}
   <div class="row">
     <article class="col mx-auto post-content">
       {% if site.ad_enable %}
-      <div class="ad-show-max1538">
-        <div class="ads">{% include adsense.html %}</div>
-        <hr>
-      </div>
+      <div class="ads">{% include adsense.html %}</div>
+      <hr>
       {% endif %}
 
       {% if page.updated_at %}
